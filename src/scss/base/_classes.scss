@@ -7,17 +7,12 @@
 
   padding: 0.5em 1em;
 
-  min-width: 250px;
-  min-height: 60px;
-
   letter-spacing: 0.1em;
 
   border-width: 2px;
   border-style: solid;
 
   transition: background-color 0.3s;
-
-  font-size: 1.125rem;
 
   &:hover,
   &:focus {
@@ -27,10 +22,27 @@
   &--light {
     border-color: $color-white;
     background-color: rgba($color-white, 0.1);
+
+    @include lg-min {
+      min-width: 250px;
+      min-height: 60px;
+      font-size: 1.125rem;
+    }
+
+    @include lg-md {
+      min-width: 200px;
+      min-height: 50px;
+    }
+
+    @include md {
+      min-width: 170px;
+      min-height: 40px;
+    }
   }
 
   &--primary {
     border-color: $color-white;
+    font-size: 1.125rem;
   }
 }
 

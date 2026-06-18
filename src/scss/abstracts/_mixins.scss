@@ -34,7 +34,7 @@
   @include position(absolute, $top, $right, $bottom, $left);
 }
 
-@mixin top-bar($height: 60px) {
+@mixin top-bar($height: null, $top: null) {
   position: absolute;
   top: 0;
   left: 0;
