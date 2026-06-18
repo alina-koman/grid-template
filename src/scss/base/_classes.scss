@@ -1,6 +1,10 @@
 @use "../abstracts" as *;
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 0.5em 1em;
 
   min-width: 250px;
@@ -11,16 +15,23 @@
   border-width: 2px;
   border-style: solid;
 
+  transition: background-color 0.3s;
+
+  font-size: 1.125rem;
+
   &:hover,
   &:focus {
-    border-color: $color-accent;
+    background-color: $color-accent;
   }
 
   &--light {
-    //background-color: $color-white;
+    border-color: $color-white;
+    background-color: rgba($color-white, 0.1);
   }
 
-  &--primary {}
+  &--primary {
+    border-color: $color-white;
+  }
 }
 
 .visually-hidden {

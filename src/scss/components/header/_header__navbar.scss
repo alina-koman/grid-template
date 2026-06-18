@@ -1,1 +1,26 @@
 @use "../../abstracts" as *;
+
+.header__navbar {
+  &-list {
+    display: grid;
+    justify-content: end;
+    gap: $gap;
+    grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
+    @include unlist;
+  }
+  &-item {
+
+  }
+  &-link {
+    padding: $gap $gap-sm;
+
+    letter-spacing: 0.085em;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus{
+      color: $color-accent;
+    }
+  }
+  //&-btn-row {}
+}
