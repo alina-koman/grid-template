@@ -34,6 +34,14 @@
   @include position(absolute, $top, $right, $bottom, $left);
 }
 
+@mixin top-bar($height: 60px) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $height;
+}
+
 @mixin box-shadow {
   box-shadow: -3px 3px 20px -10px $color-black;
 }
