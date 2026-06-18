@@ -178,6 +178,7 @@ h1{
   font-weight:300;
   line-height:1.2;
   text-transform:uppercase;
+  letter-spacing:0.078em;
 }
 
 h2{
@@ -259,7 +260,7 @@ a{
 }
 .header__content-title{
   text-align:center;
-  margin:0 0 47px 0;
+  margin:0 0 53px 0;
 }
 .header__content-actions{
   display:-webkit-box;
@@ -295,7 +296,10 @@ a{
   font-size:1.5rem;
 }
 .header__logo-accent{
-  color:#d66926;
+  display:inline-block;
+  padding:14px 1px 13px 5px;
+  border:3px solid #d53d27;
+  margin-right:4px;
 }
 
 .header__navbar-list{
@@ -306,12 +310,13 @@ a{
   gap:20px;
   grid-template-columns:repeat(auto-fit, minmax(40px, -webkit-max-content));
   grid-template-columns:repeat(auto-fit, minmax(40px, max-content));
-  margin:0;
+  margin:0 -10px 0 0;
   padding:0;
   list-style:none;
 }
 .header__navbar-link{
   padding:20px 10px;
+  font-size:1.125rem;
   letter-spacing:0.085em;
   -webkit-transition:color 0.3s;
   transition:color 0.3s;

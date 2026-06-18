@@ -6,14 +6,14 @@
     justify-content: end;
     gap: $gap;
     grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
-    @include unlist;
+    @include unlist(0 (-$gap-sm) 0 0);
   }
   &-item {
 
   }
   &-link {
     padding: $gap $gap-sm;
-
+    font-size: 1.125rem;
     letter-spacing: 0.085em;
     transition: color 0.3s;
 
