@@ -1,1 +1,37 @@
 @use '../../abstracts' as *;
+
+.subscribe__item
+{
+    font-family: $font-main;
+    font-size: .875rem;
+
+    width: 100%;
+    min-height: 50px;
+    padding: 0 $gap-lg;
+
+    transition: background-color .3s, border-color .3s;
+    letter-spacing: .15em;
+
+    color: $color-white;
+    border: 0;
+    border-bottom: 2px solid $color-white;
+    background-color: rgba($color-white, .1);
+
+    &::placeholder
+    {
+        opacity: 1;
+        color: $color-white;
+    }
+
+    &:hover,
+    &:focus
+    {
+        outline: none;
+        background-color: rgba($color-white, .2);
+    }
+
+    &--button
+    {
+        cursor: pointer;
+    }
+}

@@ -151,7 +151,7 @@ template{
 [hidden]{
   display:none;
 }
-.about__container, .header__menu-container, .header__content-container{
+.subscribe__container, .about__container, .header__menu-container, .header__content-container{
   width:min(100% - 40px, 1300px);
   margin-inline:auto;
 }
@@ -524,13 +524,62 @@ a{
   height:auto;
 }
 
+.subscribe{
+  background-color:#2d3651;
+  padding-block:30px;
+}
+.subscribe__form{
+  display:grid;
+  gap:20px;
+}
+
+.subscribe__item{
+  font-family:"Roboto", sans-serif;
+  font-size:0.875rem;
+  width:100%;
+  min-height:50px;
+  padding:0 30px;
+  -webkit-transition:background-color 0.3s, border-color 0.3s;
+  transition:background-color 0.3s, border-color 0.3s;
+  letter-spacing:0.15em;
+  color:#fff;
+  border:0;
+  border-bottom:2px solid #fff;
+  background-color:rgba(255, 255, 255, 0.1);
+}
+.subscribe__item::-webkit-input-placeholder{
+  opacity:1;
+  color:#fff;
+}
+.subscribe__item::-moz-placeholder{
+  opacity:1;
+  color:#fff;
+}
+.subscribe__item:-ms-input-placeholder{
+  opacity:1;
+  color:#fff;
+}
+.subscribe__item::-ms-input-placeholder{
+  opacity:1;
+  color:#fff;
+}
+.subscribe__item::placeholder{
+  opacity:1;
+  color:#fff;
+}
+.subscribe__item:hover, .subscribe__item:focus{
+  outline:none;
+  background-color:rgba(255, 255, 255, 0.2);
+}
+.subscribe__item--button{
+  cursor:pointer;
+}
 @media (576px <= width < 768px){
   .skills__container{
     grid-template-columns:repeat(2, 1fr);
     grid-template-areas:"a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
   }
 }
-
 @media (576px <= width){
   .btn--primary{
     min-width:350px;
@@ -547,8 +596,10 @@ a{
   .about{
     padding-block:100px;
   }
+  .subscribe__form{
+    grid-template-columns:repeat(3, 1fr);
+  }
 }
-
 @media (768px <= width < 992px){
   h1{
     font-size:2.5rem;
@@ -565,7 +616,6 @@ a{
     grid-template-areas:"a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a9" "a7 a9 a9";
   }
 }
-
 @media (768px <= width){
   .header__navbar-list{
     display:grid;
@@ -603,7 +653,6 @@ a{
     font-size:2.5rem;
   }
 }
-
 @media (992px <= width){
   h1{
     font-size:3.75rem;
@@ -621,7 +670,6 @@ a{
     grid-template-areas:"a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
   }
 }
-
 @media (width < 768px){
   h1{
     font-size:1.875rem;
@@ -674,7 +722,6 @@ a{
     font-size:2rem;
   }
 }
-
 @media (width < 576px){
   .header__content-actions{
     -webkit-box-align:center;
@@ -699,7 +746,6 @@ a{
     font-size:1.75rem;
   }
 }
-
 @media (width < 480px){
   h1{
     font-size:1.5rem;
