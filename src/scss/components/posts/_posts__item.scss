@@ -1,2 +1,80 @@
 @use '../../abstracts' as *;
-@use 'sass:color';
+
+.posts__item
+{
+    overflow: hidden;
+
+    background-color: $color-gray-light2;
+
+    @include lg-min
+    {
+        &--large
+        {
+            grid-column: span 2;
+        }
+    }
+}
+
+.posts__item-link
+{
+    display: grid;
+
+    height: 100%;
+
+    transition: color .3s, background-color .3s;
+    text-align: center;
+
+    color: $color-gray;
+
+    &:hover,
+    &:focus
+    {
+        color: $color-white;
+        background-color: $color-primary;
+    }
+}
+
+.posts__item-image
+{
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+.posts__item-content
+{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 150px;
+    padding: $gap $gap-lg;
+
+    justify-content: center;
+}
+
+.posts__item-title
+{
+    font-size: 1.125rem;
+
+    margin: 0 0 $gap-sm;
+
+    color: $color-primary;
+
+    .posts__item-link:hover &,
+    .posts__item-link:focus &
+    {
+        color: $color-white;
+    }
+}
+
+.posts__item-description
+{
+    font-family: $font-main;
+    font-size: .875rem;
+    line-height: 1.35;
+
+    margin: 0;
+}

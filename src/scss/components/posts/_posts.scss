@@ -1,1 +1,49 @@
 @use '../../abstracts' as *;
+
+.posts
+{
+    @include sm-min
+    {
+        padding-block: $gap-x5;
+    }
+    @include sm
+    {
+        padding-block: $gap-x3;
+    }
+
+    &__container
+    {
+        @extend %container;
+    }
+
+    &__title
+    {
+        margin: 0 0 $gap-x2;
+
+        color: $color-primary;
+    }
+
+    &__grid
+    {
+        display: grid;
+
+        gap: $gap;
+        @include lg-min
+        {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include lg-sm
+        {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__actions
+    {
+        display: flex;
+
+        margin-top: $gap-x2;
+
+        justify-content: center;
+    }
+}
