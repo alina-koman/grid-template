@@ -1,0 +1,52 @@
+@use '../../abstracts' as *;
+
+.about__content
+{
+    @include md-min
+    {
+        padding-right: $gap-x4;
+
+        border-right: 1px solid $color-gray2;
+    }
+}
+
+.about__title
+{
+    font-weight: 700;
+
+    margin: 0 0 $gap-x2;
+
+    letter-spacing: .1em;
+
+    color: $color-primary;
+
+    @include md-min
+    {
+        font-size: 2.5rem;
+    }
+    @include md
+    {
+        font-size: 2rem;
+    }
+    @include sm
+    {
+        font-size: 1.75rem;
+    }
+}
+
+.about__description
+{
+    font-family: $font-main;
+    font-size: .875rem;
+    line-height: 1.35;
+
+    p
+    {
+        margin: 0;
+
+        & + p
+        {
+            margin-top: $gap-sm;
+        }
+    }
+}

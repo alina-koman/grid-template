@@ -1,7 +1,8 @@
-@use "../../abstracts" as *;
+@use '../../abstracts' as *;
 
-.header__overlay {
-  background-color: rgba($color-primary, 0.8);
+.header__overlay
+{
+    background-color: rgba($color-primary, .8);
 
-  @include absolute-position;
+    @include absolute-position;
 }

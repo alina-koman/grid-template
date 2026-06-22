@@ -1,1 +1,37 @@
-@use "../../abstracts" as *;
+@use '../../abstracts' as *;
+
+.about
+{
+    background-color: $color-gray-light2;
+
+    @include sm-min
+    {
+        padding-block: $gap-x5;
+    }
+    @include sm
+    {
+        padding-block: $gap-x3;
+    }
+
+    &__container
+    {
+        display: grid;
+
+        @extend %container;
+        align-items: center;
+        @include md-min
+        {
+            grid-template-columns: minmax(0, 1fr) 270px;
+            gap: $gap-x4;
+        }
+        @include md
+        {
+            gap: $gap-x2;
+        }
+        @include sm
+        {
+            grid-template-columns: 1fr;
+            gap: $gap-x2;
+        }
+    }
+}

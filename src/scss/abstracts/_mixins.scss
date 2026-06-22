@@ -1,47 +1,54 @@
-@use "variables" as *;
-@use "skin" as *;
+@use './variables' as *;
+@use './skin' as *;
 
-@mixin visually-hidden {
-  position: absolute;
+@mixin visually-hidden
+{
+    position: absolute;
 
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
 
-  border: 0;
+    border: 0;
 }
 
-@mixin unlist($m: 0, $p: 0) {
-  margin: $m;
-  padding: $p;
+@mixin unlist($m: 0, $p: 0)
+{
+    margin: $m;
+    padding: $p;
 
-  list-style: none;
+    list-style: none;
 }
 
-@mixin position($position: absolute, $top: nuul, $right: null, $bottom: null, $left: null) {
-  position: $position;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+@mixin position($position: absolute, $top: nuul, $right: null, $bottom: null, $left: null)
+{
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
 }
 
-@mixin absolute-position($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  @include position(absolute, $top, $right, $bottom, $left);
+@mixin absolute-position($top: 0, $right: 0, $bottom: 0, $left: 0)
+{
+    @include position(absolute, $top, $right, $bottom, $left);
 }
 
-@mixin top-bar($height: null, $top: null) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $height;
+@mixin top-bar($height: null, $top: null)
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: $height;
 }
 
-@mixin box-shadow {
-  box-shadow: -3px 3px 20px -10px $color-black;
+@mixin box-shadow
+{
+    box-shadow: -3px 3px 20px -10px $color-black;
 }

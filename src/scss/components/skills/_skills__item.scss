@@ -1,70 +1,90 @@
-@use "../../abstracts" as *;
+@use '../../abstracts' as *;
 
-.skills__item {
-  position: relative;
-  overflow: hidden;
+.skills__item
+{
+    position: relative;
 
-  &-title {
-    z-index: 1;
-    margin: 0;
-    letter-spacing: 0.1em;
-    font-family: $font-main;
+    overflow: hidden;
 
-    @include md-min {
-      font-size: 1.25rem;
+    &-title
+    {
+        font-family: $font-main;
+
+        z-index: 1;
+
+        margin: 0;
+
+        letter-spacing: .1em;
+
+        @include md-min
+        {
+            font-size: 1.25rem;
+        }
+        @include md
+        {
+            font-size: 1.125rem;
+        }
+        @include absolute-position;
     }
 
-    @include md {
-      font-size: 1.125rem;
+    &-link
+    {
+        display: flex;
+
+        height: 100%;
+        padding: $gap;
+
+        transition: color .3s;
+
+        align-items: center;
+        justify-content: center;
     }
 
-    @include absolute-position;
-  }
+    &-image
+    {
+        transition: scale .3s;
 
-  &-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+        background-color: $color-primary;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
 
-    padding: $gap;
-
-    transition: color 0.3s;
-  }
-
-  &-image {
-    background-color: $color-primary;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: scale 0.3s;
-    @include absolute-position;
-  }
-
-  &-overlay {
-    opacity: 0.8;
-    background-color: $color-primary;
-    transition: opacity 0.3s;
-    @include absolute-position;
-  }
-
-  &:hover {
-    .skills__item-overlay {
-      opacity: 0.95;
+        @include absolute-position;
     }
 
-    .skills__item-image {
-      scale: 1.1;
+    &-overlay
+    {
+        transition: opacity .3s;
+
+        opacity: .8;
+        background-color: $color-primary;
+
+        @include absolute-position;
     }
 
-    .skills__item-link {
-      color: $color-accent;
-    }
-  }
+    &:hover
+    {
+        .skills__item-overlay
+        {
+            opacity: .95;
+        }
 
-  @for $i from 1 through 9 {
-    &:nth-child(#{$i}) {
-      grid-area: a#{$i};
+        .skills__item-image
+        {
+            scale: 1.1;
+        }
+
+        .skills__item-link
+        {
+            color: $color-accent;
+        }
     }
-  }
+
+    @for $i from 1 through 9
+    {
+        &:nth-child(#{$i})
+        {
+            grid-area: a#{$i};
+        }
+    }
 }
