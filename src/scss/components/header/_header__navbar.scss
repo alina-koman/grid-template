@@ -22,7 +22,7 @@
       @include box-shadow;
 
       &::before {
-        @include abs-position(-$gap, -$gap, -$gap, -$gap);
+        @include absolute-position(-$gap, -$gap, -$gap, -$gap);
         content: '';
         z-index: -1;
         background-color: rgba($color-gray-dark, 0.25);
