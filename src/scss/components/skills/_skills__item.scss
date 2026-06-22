@@ -2,15 +2,34 @@
 
 .skills__item {
   position: relative;
+  overflow: hidden;
 
   &-title {
     z-index: 1;
     margin: 0;
+    letter-spacing: 0.1em;
+    font-family: $font-main;
+
+    @include md-min {
+      font-size: 1.25rem;
+    }
+
+    @include md {
+      font-size: 1.125rem;
+    }
 
     @include absolute-position;
   }
 
   &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    padding: $gap;
+
+    transition: color 0.3s;
   }
 
   &-image {
@@ -18,13 +37,29 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: scale 0.3s;
     @include absolute-position;
   }
 
   &-overlay {
     opacity: 0.8;
     background-color: $color-primary;
+    transition: opacity 0.3s;
     @include absolute-position;
+  }
+
+  &:hover {
+    .skills__item-overlay {
+      opacity: 0.95;
+    }
+
+    .skills__item-image {
+      scale: 1.1;
+    }
+
+    .skills__item-link {
+      color: $color-accent;
+    }
   }
 
   @for $i from 1 through 9 {

@@ -221,7 +221,9 @@ a{
   background-color:rgba(255, 255, 255, 0.1);
 }
 .btn--primary{
-  border-color:#ffffff;
+  min-height:60px;
+  border-color:#2d3651;
+  background-color:rgba(45, 54, 81, 0.8);
   font-size:1.125rem;
 }
 
@@ -369,24 +371,56 @@ a{
 .skills__container{
   display:grid;
   grid-auto-rows:minmax(200px, calc(33.3333333333vh - 13.3333333333px));
+  margin-bottom:20px;
 }
+.skills__actions{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+}
+
 .skills__item{
   position:relative;
+  overflow:hidden;
 }
 .skills__item-title{
   z-index:1;
   margin:0;
+  letter-spacing:0.1em;
+  font-family:"Roboto", sans-serif;
+}
+.skills__item-title{
   position:absolute;
   top:0;
   right:0;
   bottom:0;
   left:0;
 }
+.skills__item-link{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  height:100%;
+  padding:20px;
+  -webkit-transition:color 0.3s;
+  transition:color 0.3s;
+}
 .skills__item-image{
   background-color:#2d3651;
   background-position:center;
   background-repeat:no-repeat;
   background-size:cover;
+  -webkit-transition:scale 0.3s;
+  transition:scale 0.3s;
   position:absolute;
   top:0;
   right:0;
@@ -396,14 +430,22 @@ a{
 .skills__item-overlay{
   opacity:0.8;
   background-color:#2d3651;
+  -webkit-transition:opacity 0.3s;
+  transition:opacity 0.3s;
   position:absolute;
   top:0;
   right:0;
   bottom:0;
   left:0;
 }
-.skills__item:nth-child(1){
-  grid-area:a1;
+.skills__item:hover .skills__item-overlay{
+  opacity:0.95;
+}
+.skills__item:hover .skills__item-image{
+  scale:1.1;
+}
+.skills__item:hover .skills__item-link{
+  color:#d66926;
 }
 .skills__item:nth-child(1){
   grid-area:a1;
@@ -439,11 +481,17 @@ a{
   }
 }
 @media (576px <= width){
+  .btn--primary{
+    min-width:350px;
+  }
   .skills{
     padding:10px;
   }
   .skills__container{
     gap:10px;
+  }
+  .skills__actions{
+    margin-bottom:30px;
   }
 }
 @media (768px <= width < 992px){
@@ -483,6 +531,9 @@ a{
   }
   .header__navbar-btn{
     display:none;
+  }
+  .skills__item-title{
+    font-size:1.25rem;
   }
 }
 @media (992px <= width){
@@ -544,8 +595,14 @@ a{
   .header__navbar-link{
     padding:10px 20px;
   }
+  .skills__item-title{
+    font-size:1.125rem;
+  }
 }
 @media (width < 576px){
+  .btn--primary{
+    min-width:100%;
+  }
   .header__content-actions{
     -webkit-box-orient:vertical;
     -webkit-box-direction:normal;
